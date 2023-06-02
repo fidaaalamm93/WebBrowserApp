@@ -92,11 +92,6 @@
                 <constraint firstItem="7cf-s2-JXc" firstAttribute="centerY" secondItem="Yab-lD-r8P" secondAttribute="centerY" id="uk7-Lp-fFh"/>
                 <constraint firstItem="Yab-lD-r8P" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="vnx-1m-u4x"/>
             </constraints>
-            <variation key="default">
-                <mask key="subviews">
-                    <exclude reference="7cf-s2-JXc"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="64.885496183206101" y="19.718309859154932"/>
         </view>
     </objects>

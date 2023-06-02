@@ -96,13 +96,12 @@ class WKWebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate 
     func setupWebView() {
         webView.navigationDelegate = self
         webView.uiDelegate = self
-        //        activityIndicator.startAnimating()
         webView.allowsBackForwardNavigationGestures = true
     }
 
     /// func to open the webview with a specific URL.
     func loadWebView(url: String) {
-        //        showLoader(isLoading: true)
+        showLoader(isLoading: true)
         webView.frame = view.frame
 
         guard let url = URL(string: url) else {
@@ -129,18 +128,21 @@ class WKWebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate 
 
     /// func to navigates to the back item in the back-forward list.
     func goBack() {
+        showLoader(isLoading: true)
         webView.goBack()
         webView.reload()
     }
 
     /// func to navigates to the forward item in the back-forward list.
     func goForword() {
+        showLoader(isLoading: true)
         webView.goForward()
         webView.reload()
     }
 
     /// func to reload the current item in the back-forward list, and if the url is empty the init url will open.
     func refresh() {
+        showLoader(isLoading: true)
         if webView.url != nil {
             webView.reload()
         } else {
@@ -166,6 +168,7 @@ extension WKWebViewController {
         }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        showLoader(isLoading: false)
         checkBackForwordStatus()
     }
 
